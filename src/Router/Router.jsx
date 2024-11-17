@@ -11,6 +11,9 @@ import Register from '../Components/Register';
 import Compaings from '../Components/Compaings';
 import HowTo from '../Components/HowTo';
 import Dashboard from '../Components/Dashboard';
+import HowToWorks from '../Pages/HowToWorks';
+import Feauters from '../Pages/feauters';
+import Invloed from '../Pages/Invloed';
   const router = createBrowserRouter([
     {
         path:'',
@@ -39,6 +42,18 @@ import Dashboard from '../Components/Dashboard';
    {
       path:'/about',
       element:<About></About>
+    },
+    {
+      path:'/howtoWorks',
+      element:<HowToWorks></HowToWorks>
+    },
+    {
+      path:'/features',
+      element:<Feauters></Feauters>
+    },
+    {
+      path:'/invloed',
+      element:<Invloed></Invloed>
     },
     {
       path:'login',

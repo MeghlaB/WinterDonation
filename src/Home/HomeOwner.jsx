@@ -17,7 +17,7 @@ export default function HomeOwner() {
         <div className="card-body ">
             <p>  Register on our platform by creating an account. Once you're signed up, you can view active donation campaigns and start contributing.</p>
             <div className="card-actions justify-end">
-            <button className="btn btn-primary hover:translate-x-2 transition-transform duration-500">How It Works Section <FaLongArrowAltRight></FaLongArrowAltRight></button>
+            <NavLink to={'/howtoWorks'} className="btn btn-primary hover:translate-x-2 transition-transform duration-500">How It Works Section <FaLongArrowAltRight></FaLongArrowAltRight></NavLink>
             </div>
         </div>
     </div>
@@ -25,7 +25,7 @@ export default function HomeOwner() {
         <div className="card-body ">
             <p>   The capital division, where you can find multiple donation centers and help the most vulnerable communities.</p>
             <div className="card-actions justify-end">
-            <button className="btn btn-primary hover:translate-x-2 transition-transform duration-500">Featured Divisions <FaLongArrowAltRight></FaLongArrowAltRight></button>
+            <NavLink to={'/features'} className="btn btn-primary hover:translate-x-2 transition-transform duration-500">Featured Divisions <FaLongArrowAltRight></FaLongArrowAltRight></NavLink>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@ export default function HomeOwner() {
         <div className="card-body text-center ">
             <p>How You Can Get Involved</p>
             <div className="card-actions justify-end">
-            <button className="btn btn-primary hover:translate-x-2 transition-transform duration-500">Get Involved <FaLongArrowAltRight></FaLongArrowAltRight></button>
+            <NavLink to={'/invloed'} className="btn btn-primary hover:translate-x-2 transition-transform duration-500">Get Involved <FaLongArrowAltRight></FaLongArrowAltRight></NavLink>
             </div>
         </div>
     </div>
