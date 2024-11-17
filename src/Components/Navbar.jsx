@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import { AuthContext } from '../ContextApi/AuthProvider'
 import { NavLink } from 'react-router-dom'
-
+import logoImg from '../assets/winnterDonation.avif'
 export default function Navbar() {
     const {name} = useContext(AuthContext)
     console.log(name)
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-blue-950 text-white">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -25,24 +25,26 @@ export default function Navbar() {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul className="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        className="menu menu-sm dropdown-content bg-blue-950 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        <NavLink to={'/'}>Home</NavLink>
+     <NavLink to={'/Compaigns'}>Donation Campaigns</NavLink>
+     <NavLink to={'/howTo'}>How to Help</NavLink>
+     <NavLink to={'/dashboard'}>Dashboard</NavLink>
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="btn btn-ghost text-[18px] lg:text-xl"><span><img className='w-10 h-10 rounded-full' src={logoImg} alt="" /></span>Winnter Donation</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 gap-4 text-xs md:text-xl font-bold">
-     <NavLink to={'/'}>Home</NavLink>
-     <NavLink to={'/about'}>About</NavLink>
+    <ul className="menu menu-horizontal px-1 gap-6 text-[16px] font-bold">
+     <NavLink className={({ isActive}) =>isActive ? "underline text-emerald-500" : ""
+  } to={'/'}>Home</NavLink>
+     <NavLink className={({ isActive}) =>isActive ? "underline text-emerald-500" : ""
+  } to={'/Compaigns'}>Donation Campaigns</NavLink>
+     <NavLink className={({ isActive}) =>isActive ? "underline text-emerald-500" : ""
+  } to={'/howTo'}>How to Help</NavLink>
+     <NavLink className={({ isActive}) =>isActive ? "underline text-emerald-500" : ""
+  } to={'/dashboard'}>Dashboard</NavLink>
+
      
     </ul>
   </div>
