@@ -33,13 +33,13 @@ import Dashboard from '../Components/Dashboard';
               path:'dashboard',
               element:<Dashboard></Dashboard>
             },
-            // {
-            //     path:'/about',
-            //     element:<About></About>
-            // }
+            
         ]
     },
-   
+   {
+      path:'/about',
+      element:<About></About>
+    },
     {
       path:'login',
       element:<Login></Login>
