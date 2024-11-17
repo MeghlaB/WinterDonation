@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { AuthContext } from '../ContextApi/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
+  const {creatUser} = useContext (AuthContext)
+  const navigate = useNavigate()
     const handeleLRegister = e =>{
         e.preventDefault()
         const Name = e.target.name.value;
@@ -8,6 +12,16 @@ export default function Register() {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email , password)
+        
+        creatUser (email,password)
+        .then((result)=>{
+          console.log(result.user)
+          navigate('/')
+
+        })
+        .catch((err)=>{
+          console.log(err.message)
+        })
     }
   return (
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

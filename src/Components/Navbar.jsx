@@ -47,7 +47,7 @@ export default function Navbar() {
     </ul>
   </div>
   <div className="navbar-end">
-    <NavLink to={'login'} className="btn">Login</NavLink>
+    <NavLink to={'/auth/login'} className="btn">Login</NavLink>
   </div>
 </div>
   )

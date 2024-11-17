@@ -8,8 +8,6 @@ import image6 from '../assets/Rangpur.jpeg'
 import { AuthContext } from '../ContextApi/AuthProvider'
 
 export default function Banner() {
-    const {clothes} = useContext(AuthContext)
-    const {image,title} = clothes
   return (
    
     <div className="carousel w-full h-[350px] mt-7">
@@ -17,10 +15,10 @@ export default function Banner() {
         <img
             src={image1}
             className="w-full h-full object-cover opacity-80 filter blur-sm" /> 
-             <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center text-white p-4">
-        <div class="text-center">
-          <h2 class="text-4xl font-bold mb-4">Winter Clothes Donation Drive - Dhaka</h2>
-          <p class="text-lg mb-4">Donate winter clothes and help those in need during the coldest months in Dhaka.</p>
+             <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center text-white p-4">
+        <div className="text-center">
+          <h2 className="text-4xl font-bold mb-4">Winter Clothes Donation Drive - Dhaka</h2>
+          <p className="text-lg mb-4">Donate winter clothes and help those in need during the coldest months in Dhaka.</p>
           <button class="bg-blue-600 text-white py-2 px-6 rounded-lg hover:bg-blue-700 transition">Donate Now</button>
         </div>
       </div>

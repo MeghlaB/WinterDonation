@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Login() {
     const handeleLogin = e =>{
@@ -29,7 +29,7 @@ export default function Login() {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-        <p>we have an any account ? please <span><Link className='text-blue-700 underline' to={'register'}>Register</Link></span></p>
+        <p>Dont’t Have An Account ? Register <span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
       </form>
     </div>
   )

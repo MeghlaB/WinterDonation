@@ -6,14 +6,16 @@ import {
 import MainLayout from '../MainLayout/MainLayout';
 import Home from '../Components/Home';
 import About from '../Components/About';
-import Login from '../Components/Login';
-import Register from '../Components/Register';
 import Compaings from '../Components/Compaings';
 import HowTo from '../Components/HowTo';
 import Dashboard from '../Components/Dashboard';
 import HowToWorks from '../Pages/HowToWorks';
 import Feauters from '../Pages/feauters';
 import Invloed from '../Pages/Invloed';
+import AuthLayout from '../MainLayout/AuthLayout';
+import Login from '../Components/Login'
+import Register from '../Components/Register';
+
   const router = createBrowserRouter([
     {
         path:'',
@@ -56,14 +58,21 @@ import Invloed from '../Pages/Invloed';
       element:<Invloed></Invloed>
     },
     {
-      path:'login',
-      element:<Login></Login>
-    },
-    {
-      path:'regiter',
-      element:<Register></Register>
+      path:'/auth',
+      element:<AuthLayout></AuthLayout>,
+      children:[
+            {
+              path:'/auth/login',
+              element:<Login></Login>
+            },
+            {
+              path:'/auth/register',
+              element:<Register></Register>
+            }
 
+      ]
     }
+   
   ])
 
 export default router
