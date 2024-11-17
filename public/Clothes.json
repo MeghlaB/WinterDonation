@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Winter Clothes Donation Drive - Dhaka",
+    "image": "https://i.ibb.co.com/v3Hsd2x/images-1.jpg",
+    "description": "Join us in our mission to provide warm winter clothes to the underprivileged people in Dhaka. Your donations will help children and adults stay warm this winter.",
+    "status": "Active",
+    "contactInfo": "Call us at +880123456789 or email us at donate@winterdrive.com",
+    "division": "Dhaka"
+  },
+  {
+    "id": 2,
+    "title": "Winter Clothes Donation - Chittagong",
+    "image": "https://i.ibb.co.com/tYyZ2BZ/donation-boxes-clothes-shoes-on-260nw-1070332052.webp",
+    "description": "We are collecting winter clothes for the people of Chittagong who are in dire need. Help us make a difference in their lives by contributing any winter clothing you can spare.",
+    "status": "Active",
+    "contactInfo": "Contact: +880987654321 | Email: info@chittagongdonate.com",
+    "division": "Chittagong"
+  },
+  {
+    "id": 3,
+    "title": "Winter Clothes Drive for Sylhet",
+    "image": "https://i.ibb.co.com/cFmLFjr/images-2.jpg",
+    "description": "Winter can be extremely harsh for those without proper clothing. Donate your old winter clothes to our Sylhet campaign and help those in need.",
+    "status": "Active",
+    "contactInfo": "Reach out at +8801122334455 or email us at sylhet@winterdonate.com",
+    "division": "Sylhet"
+  },
+  {
+    "id": 4,
+    "title": "Barisal Winter Clothes Collection",
+    "image": "https://i.ibb.co.com/v4B6KxC/barishal.jpg",
+    "description": "This winter, help provide warmth to the people of Barisal. We are collecting jackets, sweaters, gloves, and more to distribute to those in need.",
+    "status": "Active",
+    "contactInfo": "For more info, call +8803344556677 or email us at barisal@donatewarmth.com",
+    "division": "Barisal"
+  },
+  {
+    "id": 5,
+    "title": "Khulna Winter Clothing Campaign",
+    "image": "https://i.ibb.co.com/mqfPHpQ/khulna.jpg",
+    "description": "Khulna's winter can be harsh for many families. Donate your winter clothes and support our mission to make this season warmer for those who need it the most.",
+    "status": "Active",
+    "contactInfo": "Call us at +8807788990011 or email khulna@warmdonate.com",
+    "division": "Khulna"
+  },
+  {
+    "id": 6,
+    "title": "Rangpur Winter Clothes Donation",
+    "image": "https://i.ibb.co.com/F7m7d8Z/Rangpur.jpg",
+    "description": "Help the people of Rangpur stay warm this winter by donating any unused winter clothes. Your kindness can make a big difference.",
+    "status": "Active",
+    "contactInfo": "For inquiries, contact +8801122336677 or email us at rangpur@wintercare.com",
+    "division": "Rangpur"
+  }
+]
