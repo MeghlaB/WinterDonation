@@ -3,8 +3,6 @@ import { AuthContext } from '../ContextApi/AuthProvider'
 import { NavLink } from 'react-router-dom'
 import logoImg from '../assets/winnterDonation.avif'
 export default function Navbar() {
-    const {name} = useContext(AuthContext)
-    console.log(name)
   return (
     <div className="navbar bg-blue-950 text-white">
   <div className="navbar-start">

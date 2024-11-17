@@ -10,7 +10,7 @@ export default function Invloed() {
       <div className="text-center mb-12">
         <h2 className="text-4xl font-semibold text-gray-800 mb-6">How You Can Get Involved</h2>
         <p className="text-lg text-gray-700 mb-8">
-          There are several ways you can help bring warmth to those in need. Here’s how you can get involved and make a difference today:
+          There are several ways you can help bring warmth to those in need. Here's how you can get involved and make a difference today:
         </p>
       </div>
 
