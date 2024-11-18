@@ -17,6 +17,7 @@ import Login from '../Components/Login'
 import Register from '../Components/Register';
 import DetailsPage from '../Pages/DetailsPage'
 import PrivetRouter from '../PrivetRoute/PrivetRouter';
+import UpdateProfile from '../Pages/UpdateProfile';
 
   const router = createBrowserRouter([
     {
@@ -37,8 +38,12 @@ import PrivetRouter from '../PrivetRoute/PrivetRouter';
               element:<HowTo></HowTo>
             },
             {
-              path:'dashboard',
-              element:<Dashboard></Dashboard>
+              path:'/dashboard',
+              element:<PrivetRouter><Dashboard></Dashboard></PrivetRouter>
+            },
+            {
+              path:'/update',
+              element:<UpdateProfile></UpdateProfile>
             },
             
         ]
@@ -65,6 +70,7 @@ import PrivetRouter from '../PrivetRoute/PrivetRouter';
         <DetailsPage></DetailsPage>
       </PrivetRouter>
     },
+   
     {
       path:'/auth',
       element:<AuthLayout></AuthLayout>,

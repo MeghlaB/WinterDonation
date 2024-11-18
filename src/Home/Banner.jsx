@@ -10,7 +10,7 @@ import { AuthContext } from '../ContextApi/AuthProvider'
 export default function Banner() {
   return (
    
-    <div className="carousel w-full h-[350px] mt-7">
+    <div className="carousel w-full h-[350px]">
     <div id="slide1" className="carousel-item relative w-full">
         <img
             src={image1}
