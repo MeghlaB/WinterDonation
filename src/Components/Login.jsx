@@ -1,31 +1,36 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
-import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../ContextApi/AuthProvider';
 export default function Login() {
-  const{signInUser ,GoogleLogin,setUser} = useContext(AuthContext)
+  const{signInUser ,GoogleLogin,setUsere} = useContext(AuthContext)
+  const location = useLocation()
+  console.log(location)
   const navigate = useNavigate()
     const handeleLogin = e =>{
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email , password)
         signInUser(email,password)
         .then((result)=>{
-          console.log(result.user)
-          navigate('/')
+          setUsere(result.user)
+          // navigate('/')
+          navigate(location?.state? location.state :'')
         })
         .catch((err)=>{
-          console.log(err.message)
+         console.log(err.message)
         })
     }
    const handleGoogle = ()=>{
     GoogleLogin()
     .then((result)=>{
-      setUser(result.user)
+      setUsere(result.user)
+      navigate(location?.state? location.state :'')
     })
     .catch((err)=>{
-      console.log(err.message)
+      setUsere(err.message)
     })
    }
   return (

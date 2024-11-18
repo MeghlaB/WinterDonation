@@ -1,21 +1,33 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AuthContext } from '../ContextApi/AuthProvider';
 import { useNavigate } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function Register() {
   const {creatUser , UpdateProfile,setUsere} = useContext (AuthContext)
+  const [error , setError] = useState("")
+
   const navigate = useNavigate()
     const handeleLRegister = e =>{
         e.preventDefault()
+        setError('')
         const Name = e.target.name.value;
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email , password)
-        
+        if(password.length<6){
+          return setError('Password must be at least 6 character')
+        }
+        if (!/[A-Z]/.test(password)) {
+          return setError("Password must contain at least one uppercase letter.");
+      }
+      if (!/[a-z]/.test(password)) {
+          return setError("Password must contain at least one lowercase letter.");
+      }
         creatUser (email,password)
         .then((result)=>{
           setUsere(result.user)
+          toast.success("Registration successful!")
           UpdateProfile({displayName:Name, 
             photoURL:photo})
           .then(()=>{
@@ -29,7 +41,7 @@ export default function Register() {
 
         })
         .catch((err)=>{
-          console.log(err.message)
+          toast.error(`Registration failed! Error:${err.code}`)
         })
     }
   return (
@@ -58,12 +70,16 @@ export default function Register() {
             <span className="label-text">Password</span>
           </label>
           <input type="password" placeholder="password" name='password' className="input input-bordered" required />
+          {
+            error&&<p className='text-red-500'>{error}</p>
+          }
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Register</button>
+          <ToastContainer></ToastContainer>
         </div>
       </form>
     </div>

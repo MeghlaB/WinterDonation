@@ -22,7 +22,7 @@ export default function AuthProvider({children}) {
       return createUserWithEmailAndPassword(auth,email,password)
     }
     const signInUser =(email,password) =>{
-      setLoading(true)
+     setLoading(true)
       return signInWithEmailAndPassword(auth,email,password)
     }
     const UpdateProfile = (updateData)=>{
@@ -34,20 +34,20 @@ export default function AuthProvider({children}) {
       return signOut(auth)
     }
     const GoogleLogin = ()=>{
+      setLoading(true)
       return signInWithPopup(auth ,Provider)
     }
     useEffect(()=>{
       const Unsubscribed  = onAuthStateChanged(auth,(currentUser)=>{
         console.log('currently',currentUser)
-        setLoading(false)
         setUsere(currentUser)
+        setLoading(false)
         
       })
         return ()=>[
           Unsubscribed()
         ]
     },[])
-console.log(data)
 const AuthInfo ={
   user,
   clothes,
