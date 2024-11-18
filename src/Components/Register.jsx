@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react'
 import { AuthContext } from '../ContextApi/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 import 'react-toastify/dist/ReactToastify.css';
 export default function Register() {
   const {creatUser , UpdateProfile,setUsere} = useContext (AuthContext)
   const [error , setError] = useState("")
-
+  const [showpassword , setShowPassword] = useState(false)
   const navigate = useNavigate()
     const handeleLRegister = e =>{
         e.preventDefault()
@@ -65,11 +67,24 @@ export default function Register() {
           </label>
           <input type="email" placeholder="email" name='email' className="input input-bordered" required />
         </div>
-        <div className="form-control">
+        <div className="form-control relative">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" name='password' className="input input-bordered" required />
+          <input 
+          type={showpassword ?'text':'password'}
+          placeholder="password"
+           name='password' className="input input-bordered" required />
+          <button
+          onClick={()=>setShowPassword(!showpassword)} 
+          className='absolute right-4 top-14'
+          >
+            {
+              showpassword?<FaEyeSlash></FaEyeSlash>:<FaEye></FaEye>
+            }
+            
+          </button>
+         
           {
             error&&<p className='text-red-500'>{error}</p>
           }
