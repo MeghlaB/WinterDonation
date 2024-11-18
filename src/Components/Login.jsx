@@ -1,12 +1,24 @@
-import React from 'react'
-import { Link, NavLink } from 'react-router-dom';
+import React, { useContext } from 'react'
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../ContextApi/AuthProvider';
 
 export default function Login() {
+  const{signInUser} = useContext(AuthContext)
+  const navigate = useNavigate()
     const handeleLogin = e =>{
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email , password)
+        signInUser(email,password)
+        .then((result)=>{
+          console.log(result.user)
+          navigate('/')
+        })
+        .catch((err)=>{
+          console.log(err.message)
+        })
+
     }
   return (
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -29,7 +41,7 @@ export default function Login() {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-        <p>Dont’t Have An Account ? Register <span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
+        <p>Don't Have An Account ? Register <span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
       </form>
     </div>
   )

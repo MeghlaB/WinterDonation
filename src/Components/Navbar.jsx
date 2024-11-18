@@ -3,6 +3,7 @@ import { AuthContext } from '../ContextApi/AuthProvider'
 import { NavLink } from 'react-router-dom'
 import logoImg from '../assets/winnterDonation.avif'
 export default function Navbar() {
+  const {user} = useContext(AuthContext)
   return (
     <div className="navbar bg-blue-950 text-white">
   <div className="navbar-start">
@@ -47,7 +48,15 @@ export default function Navbar() {
     </ul>
   </div>
   <div className="navbar-end">
-    <NavLink to={'/auth/login'} className="btn">Login</NavLink>
+    {
+      user&&user?.email?
+      <div className='flex items-center gap-2'>
+        <img  className='w-10 h-10 rounded-full ' src={user?.photoURL} alt="" />
+        <p>{user?.displayName}</p>
+      </div>
+      : <NavLink to={'/auth/login'} className="btn">Login</NavLink>
+    }
+   
   </div>
 </div>
   )

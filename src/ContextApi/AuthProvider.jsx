@@ -1,6 +1,6 @@
 
 import { data } from 'autoprefixer'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import React, { createContext, useEffect, useState } from 'react'
 import { auth } from '../Firebase_Init/Firebase_init'
 import Home from '../Components/Home'
@@ -20,6 +20,9 @@ export default function AuthProvider({children}) {
     const signInUser =(email,password) =>{
       return signInWithEmailAndPassword(auth,email,password)
     }
+    const UpdateProfile = (updateData)=>{
+      return updateProfile(auth.currentUser,updateData)
+    }
     useEffect(()=>{
       const Unsubscribed  = onAuthStateChanged(auth,(currentUser)=>{
         console.log('currently',currentUser)
@@ -31,9 +34,12 @@ export default function AuthProvider({children}) {
     },[])
 console.log(data)
 const AuthInfo ={
+  user,
   clothes,
+  setUsere,
   signInUser,
-  creatUser
+  creatUser,
+  UpdateProfile
 }
   return (
     <AuthContext.Provider value={AuthInfo}>

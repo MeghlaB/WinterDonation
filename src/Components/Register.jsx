@@ -3,7 +3,7 @@ import { AuthContext } from '../ContextApi/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
-  const {creatUser} = useContext (AuthContext)
+  const {creatUser , UpdateProfile,setUsere} = useContext (AuthContext)
   const navigate = useNavigate()
     const handeleLRegister = e =>{
         e.preventDefault()
@@ -15,8 +15,17 @@ export default function Register() {
         
         creatUser (email,password)
         .then((result)=>{
-          console.log(result.user)
-          navigate('/')
+          setUsere(result.user)
+          UpdateProfile({displayName:Name, 
+            photoURL:photo})
+          .then(()=>{
+            navigate('/')
+          })
+          .catch((err)=>{
+            setUsere(err.message)
+          })
+         
+
 
         })
         .catch((err)=>{
