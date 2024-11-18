@@ -15,6 +15,8 @@ import Invloed from '../Pages/Invloed';
 import AuthLayout from '../MainLayout/AuthLayout';
 import Login from '../Components/Login'
 import Register from '../Components/Register';
+import DetailsPage from '../Pages/DetailsPage'
+import PrivetRouter from '../PrivetRoute/PrivetRouter';
 
   const router = createBrowserRouter([
     {
@@ -56,6 +58,12 @@ import Register from '../Components/Register';
     {
       path:'/invloed',
       element:<Invloed></Invloed>
+    },
+    {
+      path:'/details',
+      element:<PrivetRouter>
+        <DetailsPage></DetailsPage>
+      </PrivetRouter>
     },
     {
       path:'/auth',

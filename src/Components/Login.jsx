@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
+import { FcGoogle } from "react-icons/fc";
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../ContextApi/AuthProvider';
-
 export default function Login() {
-  const{signInUser} = useContext(AuthContext)
+  const{signInUser ,GoogleLogin,setUser} = useContext(AuthContext)
   const navigate = useNavigate()
     const handeleLogin = e =>{
         e.preventDefault()
@@ -18,10 +18,19 @@ export default function Login() {
         .catch((err)=>{
           console.log(err.message)
         })
-
     }
+   const handleGoogle = ()=>{
+    GoogleLogin()
+    .then((result)=>{
+      setUser(result.user)
+    })
+    .catch((err)=>{
+      console.log(err.message)
+    })
+   }
   return (
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+   <div>
+     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form onSubmit={handeleLogin} className="card-body">
         <div className="form-control">
           <label className="label">
@@ -41,9 +50,15 @@ export default function Login() {
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-        <p>Don't Have An Account ? Register <span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
-      </form>
+        <p>Don't Have An Account ?<span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
+       <p>
+          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white w-full'> Google <FcGoogle /></Link>
+
+       </p>
+      </form> 
     </div>
+   
+   </div>
   )
 }
 

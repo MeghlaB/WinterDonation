@@ -1,13 +1,16 @@
 
 import { data } from 'autoprefixer'
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth'
 import React, { createContext, useEffect, useState } from 'react'
 import { auth } from '../Firebase_Init/Firebase_init'
-import Home from '../Components/Home'
+import { GoogleAuthProvider } from "firebase/auth";
+
+const Provider = new GoogleAuthProvider();
 export  const AuthContext = createContext(null)
 export default function AuthProvider({children}) {
     const[clothes , setClothes] = useState([])
     const [user , setUsere] = useState((null))
+    const [loading , setLoading] = useState(true)
     useEffect(()=>{
       fetch('/Clothes.json')
       .then((responser=>responser.json()))
@@ -15,18 +18,30 @@ export default function AuthProvider({children}) {
     },[])
     // email password
     const creatUser = (email,password) =>{
+      setLoading(true)
       return createUserWithEmailAndPassword(auth,email,password)
     }
     const signInUser =(email,password) =>{
+      setLoading(true)
       return signInWithEmailAndPassword(auth,email,password)
     }
     const UpdateProfile = (updateData)=>{
+      setLoading(true)
       return updateProfile(auth.currentUser,updateData)
+    }
+    const logout =()=>{
+      setLoading(true)
+      return signOut(auth)
+    }
+    const GoogleLogin = ()=>{
+      return signInWithPopup(auth ,Provider)
     }
     useEffect(()=>{
       const Unsubscribed  = onAuthStateChanged(auth,(currentUser)=>{
         console.log('currently',currentUser)
+        setLoading(false)
         setUsere(currentUser)
+        
       })
         return ()=>[
           Unsubscribed()
@@ -39,7 +54,10 @@ const AuthInfo ={
   setUsere,
   signInUser,
   creatUser,
-  UpdateProfile
+  UpdateProfile,
+  logout,
+  loading,
+  GoogleLogin
 }
   return (
     <AuthContext.Provider value={AuthInfo}>

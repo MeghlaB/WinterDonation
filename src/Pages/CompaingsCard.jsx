@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function CompaingsCard({cloth}) {
     const{id,image,title, description} = cloth
@@ -15,7 +16,7 @@ export default function CompaingsCard({cloth}) {
             <h2 className="card-title">{title}</h2>
             <p>{description}</p>
             <div className="card-actions">
-            <button className="btn btn-primary">Donate Now</button>
+            <NavLink to={'/details'} className="btn btn-primary">Donate Now</NavLink>
             </div>
         </div>
 </div>
