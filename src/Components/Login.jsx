@@ -17,17 +17,20 @@ export default function Login() {
         .then((result)=>{
           setUsere(result.user)
           // navigate('/')
-          navigate(location?.state? location.state :'')
+         
+          navigate(location?.state? location.state :'/')
+          toast.success('Login SuccessFully!')
         })
         .catch((err)=>{
-         console.log(err.message)
+         setUsere(err.message)
+         toast.error(`Login failed${err.code}`)
         })
     }
    const handleGoogle = ()=>{
     GoogleLogin()
     .then((result)=>{
       setUsere(result.user)
-      navigate(location?.state? location.state :'')
+      navigate(location?.state? location.state :'/')
     })
     .catch((err)=>{
       setUsere(err.message)
@@ -58,7 +61,7 @@ export default function Login() {
         <p>Don't Have An Account ?<span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
        <p>
           <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white w-full'> Google <FcGoogle /></Link>
-
+        <ToastContainer></ToastContainer>
        </p>
       </form> 
     </div>

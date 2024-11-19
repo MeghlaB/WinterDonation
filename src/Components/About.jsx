@@ -1,62 +1,58 @@
-import React from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-import { Outlet } from 'react-router-dom'
-import image2 from '../assets/khulna.jpeg'
-export default function About() {
+
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import aboutImg from '../assets/About.jpeg'
+
+const AboutSection = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, easing: 'ease-in-out' }); // Initialize AOS
+  }, []);
+
   return (
-    <div>
-      <Navbar></Navbar>
-      <div className='min-h-[calc(100vh-288px)] py-4'>
-      <div className="container mx-auto py-16 px-4 bg-gray-100 rounded-lg">
-      <h2 className="text-4xl font-semibold text-center mb-8 text-gray-800">
-        About Our Mission
-      </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="text-lg text-gray-700">
-          <p className="mb-6">
-            Our Winter Donation web platform aims to bring warmth and support to those who are vulnerable to the harsh winter conditions, especially in rural and low-income areas of Bangladesh. Thousands of people struggle to stay warm as the weather gets colder, and your contributions can make a real difference in their lives.
+    <div className="bg-gray-100 py-16 px-6">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
+        {/* Mission Statement */}
+        <div data-aos="fade-right">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            About Our Mission
+          </h2>
+          <p className="text-lg text-gray-700 mb-4">
+            Our goal is to provide warmth and hope to those in need during the cold winter months. 
+            Many individuals in rural and underprivileged areas lack the necessary resources to stay warm. 
+            Through your support, we aim to bridge this gap and make winters safer and more comfortable for them.
           </p>
-          <p className="mb-6">
-            Through our platform, we connect donors with volunteers to ensure that winter clothing is distributed to those in need. We have a network of collection points and volunteer teams in different divisions to help make the donation process easy and efficient.
-          </p>
-          <p className="mb-6">
-            Whether you're looking to donate clothes, volunteer your time, or help spread awareness, your involvement can have a lasting impact. Every little bit counts, and together we can make this winter warmer for everyone.
+          <p className="text-lg text-gray-700 mb-4">
+            With a network of volunteers and collection points across Bangladesh, we ensure that your contributions 
+            reach those who need them most. Together, we can make a difference.
           </p>
         </div>
-        <div className="flex justify-center items-center">
+
+        {/* How Users Can Contribute */}
+        <div className="flex flex-col items-center" data-aos="fade-left">
           <img
-            src={image2}
-            alt="Winter Donation"
-            className="w-full h-full object-cover rounded-lg shadow-xl"
+            src={aboutImg}
+            alt="About Us"
+            className="rounded-lg shadow-lg w-full h-64 object-cover mb-6"
           />
-        </div>
-      </div>
-      <div className="mt-8 text-center">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-          How You Can Contribute
-        </h3>
-        <p className="text-lg text-gray-700 mb-4">
-          You can contribute in many ways:
-        </p>
-        <div className="flex justify-center gap-8">
-          <div className="text-center">
-            <h4 className="text-xl font-semibold text-gray-800">Donate Clothes</h4>
-            <p className="text-lg text-gray-700">Donate winter clothing to help those in need.</p>
-          </div>
-          <div className="text-center">
-            <h4 className="text-xl font-semibold text-gray-800">Volunteer</h4>
-            <p className="text-lg text-gray-700">Join our team of volunteers to help with collection and distribution.</p>
-          </div>
-          <div className="text-center">
-            <h4 className="text-xl font-semibold text-gray-800">Spread Awareness</h4>
-            <p className="text-lg text-gray-700">Help us reach more people by sharing our mission and campaigns.</p>
+          <h3 className="text-2xl font-bold text-gray-800 mb-4">
+            How You Can Contribute
+          </h3>
+          <div className="flex flex-col gap-4 text-lg text-gray-700">
+            <p>
+              <span className="font-bold">1. Donate Clothes:</span> Provide winter essentials for those in need.
+            </p>
+            <p>
+              <span className="font-bold">2. Volunteer:</span> Join our team to help collect and distribute donations.
+            </p>
+            <p>
+              <span className="font-bold">3. Spread Awareness:</span> Share our mission and encourage others to contribute.
+            </p>
           </div>
         </div>
       </div>
     </div>
-      </div>
-      <Footer></Footer>
-    </div>
-  )
-}
+  );
+};
+
+export default AboutSection;

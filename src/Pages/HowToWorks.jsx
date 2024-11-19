@@ -5,7 +5,6 @@ import image from '../assets/Dhaka.jpeg'
 export default function HowToWorks() {
   return (
     <div>
-     <Navbar></Navbar>
      <div className='min-h-[calc(100vh-288px)] py-4'>
      <div className="container mx-auto py-16 px-4 bg-gray-50 rounded-lg">
       <h2 className="text-4xl font-semibold text-center mb-8 text-gray-800">
@@ -86,7 +85,6 @@ export default function HowToWorks() {
       </div>
     </div>
      </div>
-     <Footer></Footer>
     </div>
   )
 }
