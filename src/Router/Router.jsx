@@ -18,12 +18,13 @@ import Register from '../Components/Register';
 import DetailsPage from '../Pages/DetailsPage'
 import PrivetRouter from '../PrivetRoute/PrivetRouter';
 import UpdateProfile from '../Pages/UpdateProfile';
+import ErrorPage from '../Pages/ErrorPage';
 
   const router = createBrowserRouter([
     {
         path:'',
         element:<MainLayout></MainLayout>,
-        errorElement:<p className='text-4xl font-bold text-center pt-9 text-red-600 '>404 page not found</p>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',

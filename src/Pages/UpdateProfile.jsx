@@ -9,7 +9,7 @@ export default function UpdateProfile() {
         e.preventDefault()
         const name = e.target.name.value;
         const photo = e.target.photo.value;
-        console.log(name,photo)
+        // console.log(name,photo)
         UpdateProfile({displayName:name,photoURL:photo})
         .then((result)=>{
             setUsere(result.user)

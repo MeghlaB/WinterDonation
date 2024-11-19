@@ -29,12 +29,14 @@ export default function Register() {
         creatUser (email,password)
         .then((result)=>{
           setUsere(result.user)
+          e.target.reset()
           toast.success("Registration successful!")
           UpdateProfile({displayName:Name, 
             photoURL:photo})
           .then(()=>{
             setLoading(false)
             navigate('/')
+
           })
           .catch((err)=>{
             setLoading(false)

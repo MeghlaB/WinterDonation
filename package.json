@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@firebasegen/default-connector": "file:dataconnect-generated/js/default-connector",
     "animate.css": "^4.1.1",
     "aos": "^2.3.4",
     "assingment-09": "file:",

@@ -8,8 +8,9 @@ import { sendEmailVerification, sendPasswordResetEmail } from 'firebase/auth';
 import { auth } from '../Firebase_Init/Firebase_init';
 export default function Login() {
   const{user ,signInUser ,GoogleLogin,setUsere} = useContext(AuthContext)
+  const [showpassword , setShowPassword] = useState(false)
   const location = useLocation()
-
+  const emailRef = useRef()
   const navigate = useNavigate()
     const handeleLogin = e =>{
         e.preventDefault()
@@ -20,6 +21,7 @@ export default function Login() {
           setUsere(result.user)
           navigate(location?.state? location.state :'/')
           toast.success('Login SuccessFully!')
+          e.target.reset()
         })
         .catch((err)=>{
          setUsere(err.message)
@@ -36,7 +38,22 @@ export default function Login() {
       setUsere(err.message)
     })
    }
-
+const handleForgetPassword = ()=>{
+  // console.log('hello',emailRef.current.value)
+  const email = emailRef.current.value;
+  if(!email){
+    toast.error('please provid your valid email')
+  }
+  else{
+    sendPasswordResetEmail(auth,email)
+    .then(()=>{
+      toast.success('Verify Email')
+    })
+    .catch((err)=>{
+      toast.error(`Failed to send reset email: ${err.message}`);
+    })
+  }
+}
   return (
    <div>
      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -45,15 +62,16 @@ export default function Login() {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" name='email' className="input input-bordered" required />
+          <input type="email" placeholder="email" ref={emailRef} name='email' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" placeholder="password" name='password' className="input input-bordered" required />
-          <label className="label">
+          <input type="password" ref={emailRef} placeholder="password" name='password' className="input input-bordered" required />
+          <label onClick={handleForgetPassword} className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+            <ToastContainer></ToastContainer>
           </label>
         </div>
         <div className="form-control mt-6">

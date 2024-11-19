@@ -5,7 +5,7 @@ import { Navigate, useLocation } from 'react-router-dom'
 export default function PrivetRouter({children}) {
     const {user ,loading} = useContext(AuthContext)
     const location = useLocation()
-    console.log(location)
+    // (location)
     if(loading){
         return <div className='text-center mt-4'>
             <span className="loading loading-bars loading-lg "></span>
