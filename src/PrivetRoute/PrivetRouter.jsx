@@ -15,6 +15,6 @@ export default function PrivetRouter({children}) {
         return children
     }
   return (
-    <Navigate state={location} to={'/auth/login'}></Navigate>
+    <Navigate state={location.pathname} to={'/auth/login'}></Navigate>
   )
 }

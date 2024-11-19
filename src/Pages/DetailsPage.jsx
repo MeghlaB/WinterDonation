@@ -7,14 +7,14 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
 const DonationDetails = () => {
-  const { clothes, user } = useContext(AuthContext);
+  const { clothes, user ,setLoading} = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
     if (!user) {
       navigate("/login");
     }
-  }, [user, navigate]);
+  },[]);
 
   const [formData, setFormData] = useState({
     quantity: "",

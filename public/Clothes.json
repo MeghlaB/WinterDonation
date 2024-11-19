@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Winter Clothes Donation Drive - Dhaka",
-    "image": "https://i.ibb.co.com/v3Hsd2x/images-1.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTydL_VqQnxyaELKx2Z2H5GmksIKcgmzdN44w&s",
     "description": "Join us in our mission to provide warm winter clothes to the underprivileged people in Dhaka. Your donations will help children and adults stay warm this winter.",
     "status": "Active",
     "contactInfo": "Call us at +880123456789 or email us at donate@winterdrive.com",
@@ -11,7 +11,7 @@
   {
     "id": 2,
     "title": "Winter Clothes Donation - Chittagong",
-    "image": "https://i.ibb.co.com/tYyZ2BZ/donation-boxes-clothes-shoes-on-260nw-1070332052.webp",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgd_LCzWm2O4UpctgZu32ZrDNj81qxtOI6hD-syJ-zaFFmY7Lp8ZrmdREwT14n26JJNKw&usqp=CAU",
     "description": "We are collecting winter clothes for the people of Chittagong who are in dire need. Help us make a difference in their lives by contributing any winter clothing you can spare.",
     "status": "Active",
     "contactInfo": "Contact: +880987654321 | Email: info@chittagongdonate.com",
@@ -20,7 +20,7 @@
   {
     "id": 3,
     "title": "Winter Clothes Drive for Sylhet",
-    "image": "https://i.ibb.co.com/cFmLFjr/images-2.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPKYA7yv9tUARpSiN3mBjb81j16cWIOm4SsMdKyYLpLaDIG4mbIdzakqOkgsSl5Hq4M6w&usqp=CAU",
     "description": "Winter can be extremely harsh for those without proper clothing. Donate your old winter clothes to our Sylhet campaign and help those in need.",
     "status": "Active",
     "contactInfo": "Reach out at +8801122334455 or email us at sylhet@winterdonate.com",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "title": "Barisal Winter Clothes Collection",
-    "image": "https://i.ibb.co.com/v4B6KxC/barishal.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp_RXbx49SwmIeLIJpBUl60X1qTXgiYJSc5w&s",
     "description": "This winter, help provide warmth to the people of Barisal. We are collecting jackets, sweaters, gloves, and more to distribute to those in need.",
     "status": "Active",
     "contactInfo": "For more info, call +8803344556677 or email us at barisal@donatewarmth.com",
@@ -38,7 +38,7 @@
   {
     "id": 5,
     "title": "Khulna Winter Clothing Campaign",
-    "image": "https://i.ibb.co.com/mqfPHpQ/khulna.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIoVFE9I_nA3rjyHCuATDzeiXRO8k1Hy4wNhtupLcOU9w80r9W9nhyhm6WnA4SYi7Qqgk&usqp=CAU",
     "description": "Khulna's winter can be harsh for many families. Donate your winter clothes and support our mission to make this season warmer for those who need it the most.",
     "status": "Active",
     "contactInfo": "Call us at +8807788990011 or email khulna@warmdonate.com",
@@ -47,10 +47,46 @@
   {
     "id": 6,
     "title": "Rangpur Winter Clothes Donation",
-    "image": "https://i.ibb.co.com/F7m7d8Z/Rangpur.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSD9HDgaqYvE3ubZXWpCX-M1Af6CZNJwnoXu5ZyvSYNFxqGSw-KZn09hphLLLbyIpk4Ho&usqp=CAU",
     "description": "Help the people of Rangpur stay warm this winter by donating any unused winter clothes. Your kindness can make a big difference.",
     "status": "Active",
     "contactInfo": "For inquiries, contact +8801122336677 or email us at rangpur@wintercare.com",
     "division": "Rangpur"
+  },
+  {
+    "id": 7,
+    "title": "Mymensingh Winter Clothes Donation",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsxPilWbJgXRujvKywBRl3lx8jUi5R94DKmeIHFGX3K8I2UxqoBj3hc4kLfinrxwThypI&usqp=CAU",
+    "description": "Support the Mymensingh community by donating winter clothes. Every contribution counts in helping those in need stay warm during the cold months.",
+    "status": "Active",
+    "contactInfo": "For more details, call +8805566778899 or email mymensingh@donateheat.com",
+    "division": "Mymensingh"
+  },
+  {
+    "id": 8,
+    "title": "Rajshahi Winter Clothes Drive",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi1wWEICVOCdNVrf41y9KCafDPJr1TgIeq2ri2vU7RNskA33T5DHPIEBAHVAl3ww5IeUE&usqp=CAU",
+    "description": "The winter season in Rajshahi is cold, and many people are in need of warm clothes. Your donation can help make their winter a little more bearable.",
+    "status": "Active",
+    "contactInfo": "Call us at +8806677889900 or email rajshahi@winterrelief.com",
+    "division": "Rajshahi"
+  },
+  {
+    "id": 9,
+    "title": "Comilla Winter Clothes Drive",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScpuMkLRnjc7GT6tVN75Ot1CAD2f07uNe5q31JzhqRi3ZJ9Ju2RqDIJ1_qriw6D58blDk&usqp=CAU",
+    "description": "Help the people of Comilla survive the harsh winter months by donating any unused winter clothes you may have. Together, we can make a difference.",
+    "status": "Active",
+    "contactInfo": "For more info, call +8803344558899 or email comilla@clothesdonate.com",
+    "division": "Comilla"
+  },
+  {
+    "id": 10,
+    "title": "Jessore Winter Clothes Donation",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-6Tl3VXBTFJamBjsZ3tZ_mhdlDVgKjjpoxg&s",
+    "description": "Join us in our mission to keep the people of Jessore warm this winter by donating clothes such as coats, sweaters, and gloves.",
+    "status": "Active",
+    "contactInfo": "Reach out at +8809911223344 or email jessore@donate4warmth.com",
+    "division": "Jessore"
   }
 ]

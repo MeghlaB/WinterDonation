@@ -1,13 +1,15 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Link, Navigate, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../ContextApi/AuthProvider';
+import { sendEmailVerification, sendPasswordResetEmail } from 'firebase/auth';
+import { auth } from '../Firebase_Init/Firebase_init';
 export default function Login() {
-  const{signInUser ,GoogleLogin,setUsere} = useContext(AuthContext)
+  const{user ,signInUser ,GoogleLogin,setUsere} = useContext(AuthContext)
   const location = useLocation()
-  console.log(location)
+
   const navigate = useNavigate()
     const handeleLogin = e =>{
         e.preventDefault()
@@ -16,8 +18,6 @@ export default function Login() {
         signInUser(email,password)
         .then((result)=>{
           setUsere(result.user)
-          // navigate('/')
-         
           navigate(location?.state? location.state :'/')
           toast.success('Login SuccessFully!')
         })
@@ -36,6 +36,7 @@ export default function Login() {
       setUsere(err.message)
     })
    }
+
   return (
    <div>
      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

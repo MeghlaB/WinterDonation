@@ -6,7 +6,7 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import 'react-toastify/dist/ReactToastify.css';
 export default function Register() {
-  const {creatUser , UpdateProfile,setUsere} = useContext (AuthContext)
+  const {creatUser , UpdateProfile,setUsere,setLoading} = useContext (AuthContext)
   const [error , setError] = useState("")
   const [showpassword , setShowPassword] = useState(false)
   const navigate = useNavigate()
@@ -33,9 +33,11 @@ export default function Register() {
           UpdateProfile({displayName:Name, 
             photoURL:photo})
           .then(()=>{
+            setLoading(false)
             navigate('/')
           })
           .catch((err)=>{
+            setLoading(false)
             setUsere(err.message)
           })
          

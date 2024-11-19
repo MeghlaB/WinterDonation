@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import Footer from '../Components/Footer'
-import image from '../assets/Dhaka.jpeg'
+import image from '../assets/Rangpur.jpeg'
 export default function HowToWorks() {
   return (
     <div>

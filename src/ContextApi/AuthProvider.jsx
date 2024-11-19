@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndP
 import React, { createContext, useEffect, useState } from 'react'
 import { auth } from '../Firebase_Init/Firebase_init'
 import { GoogleAuthProvider } from "firebase/auth";
+import { sendPasswordResetEmail } from 'firebase/auth/cordova';
 
 const Provider = new GoogleAuthProvider();
 export  const AuthContext = createContext(null)
@@ -42,7 +43,6 @@ export default function AuthProvider({children}) {
         console.log('currently',currentUser)
         setUsere(currentUser)
         setLoading(false)
-        
       })
         return ()=>[
           Unsubscribed()
@@ -57,7 +57,9 @@ const AuthInfo ={
   UpdateProfile,
   logout,
   loading,
-  GoogleLogin
+  setLoading,
+  GoogleLogin,
+
 }
   return (
     <AuthContext.Provider value={AuthInfo}>
