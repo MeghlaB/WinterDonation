@@ -5,10 +5,14 @@ import clothes from '../assets/clothes.jpeg'
 export default function HowTo() {
   return (
     <section className="bg-white py-16">
-  <div className="container mx-auto px-6">
-    <h2 className="text-4xl font-bold text-center text-blue-600 mb-8">How to Help</h2>
+  <div className="container mx-auto px-6"
+   >
+    <h2 className="text-4xl font-bold text-center text-blue-600 mb-8"
+     data-aos="flip-left">How to Help</h2>
     <div className="space-y-8">
-      <div className="flex flex-col md:flex-row items-center gap-6">
+      <div className="flex flex-col md:flex-row items-center gap-6"
+      data-aos="fade-up"
+     >
         <div className="md:w-1/3">
           <img src={clothes}alt="Donate Clothes" className="rounded-lg shadow-lg" />
         </div>
@@ -19,7 +23,9 @@ export default function HowTo() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row-reverse items-center gap-6">
+      <div className="flex flex-col md:flex-row-reverse items-center gap-6"
+      data-aos="fade-up"
+   >
         <div className="md:w-1/3">
           <img src={volenter} alt="Volunteer" className="rounded-lg shadow-lg" />
         </div>
@@ -30,7 +36,9 @@ export default function HowTo() {
           </p>
         </div>
       </div>
-      <div className="flex flex-col md:flex-row items-center gap-6">
+      <div className="flex flex-col md:flex-row items-center gap-6" 
+      data-aos="fade-up"
+  >
         <div className="md:w-1/3">
           <img src={awernes}alt="Spread Awareness" className="rounded-lg shadow-lg" />
         </div>

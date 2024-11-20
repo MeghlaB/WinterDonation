@@ -12,7 +12,8 @@ const AboutSection = () => {
   return (
     <div className="bg-gray-100 py-16 px-6">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-8">
-        <div data-aos="fade-right">
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="bottom-bottom">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             About Our Mission
           </h2>
@@ -27,7 +28,9 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="flex flex-col items-center" data-aos="fade-left">
+        <div className="flex flex-col items-center" 
+        data-aos="fade-up" 
+        data-aos-anchor-placement="bottom-bottom">
           <img
             src={aboutImg}
             alt="About Us"

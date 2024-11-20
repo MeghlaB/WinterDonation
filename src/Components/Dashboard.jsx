@@ -9,7 +9,7 @@ export default function Dashboard() {
      <div className="w-11/12 border border-slate-800 mx-auto my-5 rounded-2xl ">
   <div className="hero-content text-center">
     <div className="max-w-md">
-      <h1 className="text-5xl font-bold py-4"> welcome {user?.displayName}💢</h1>
+      <h1 className="text-5xl font-bold py-4"> Welcome {user?.displayName}💢</h1>
      <div className='py-4'>
         <img className='w-30 mx-auto' src={user?.photoURL} alt="" />
         <p className='text-xl lg:text-2xl font-bold'>Email: {user?.email}</p>

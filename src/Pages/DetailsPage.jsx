@@ -46,12 +46,7 @@ const DonationDetails = () => {
       <div className="mb-6">
         <h1 className="text-2xl font-bold">{clothes.title}</h1>
         <p className="text-gray-700 mt-2">{clothes.description}</p>
-        <p className="mt-4">
-          <strong>Start Date:</strong> {clothes.startDate}
-        </p>
-        <p>
-          <strong>End Date:</strong> {clothes.endDate}
-        </p>
+      
       </div>
       <form onSubmit={handleSubmit} className="bg-white p-4 rounded shadow">
         <h2 className="text-xl font-bold mb-4">Donation Form</h2>

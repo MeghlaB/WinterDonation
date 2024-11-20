@@ -10,7 +10,7 @@ export default function Features() {
   return (
     <div>
       <section className="py-16 px-6 bg-white">
-        <div className="text-center" data-aos="fade-up">
+        <div className="text-center" data-aos="zoom-in-down">
           <h2 className="text-4xl font-semibold text-gray-800 mb-6">
             Featured Divisions
           </h2>
@@ -35,7 +35,7 @@ export default function Features() {
 
           <div
             className="bg-gradient-to-r from-green-500 to-teal-600 p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-            data-aos="fade-up"
+           data-aos="zoom-in-down"
           >
             <h3 className="text-2xl font-semibold text-white mb-4">Chattogram</h3>
             <p className="text-lg text-white">
@@ -48,7 +48,7 @@ export default function Features() {
 
           <div
             className="bg-gradient-to-r from-yellow-500 to-red-600 p-8 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:shadow-2xl"
-            data-aos="fade-left"
+           data-aos="zoom-in-down"
           >
             <h3 className="text-2xl font-semibold text-white mb-4">Khulna</h3>
             <p className="text-lg text-white">

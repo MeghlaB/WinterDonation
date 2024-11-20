@@ -7,11 +7,13 @@ export default function HowToWorks() {
     <div>
      <div className='min-h-[calc(100vh-288px)] py-4'>
      <div className="container mx-auto py-16 px-4 bg-gray-50 rounded-lg">
-      <h2 className="text-4xl font-semibold text-center mb-8 text-gray-800">
+      <h2 className="text-4xl font-semibold text-center mb-8 text-gray-800" data-aos="fade-down">
         How It Works
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-12">
-        <div className="text-lg text-gray-700">
+        <div className="text-lg text-gray-700"
+         data-aos="fade-up"
+         >
           <h3 className="text-2xl font-semibold text-gray-800 mb-4">
             Step 1: Choose Your Donation
           </h3>
@@ -33,7 +35,10 @@ export default function HowToWorks() {
             You can either donate your clothes directly at the collection points or volunteer your time to help with the distribution process. Every effort counts!
           </p>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center"
+         data-aos="fade-down"
+         data-aos-easing="linear"
+         data-aos-duration="1500">
           <img
             src={image}
             alt="How It Works"
@@ -42,7 +47,8 @@ export default function HowToWorks() {
         </div>
       </div>
       <div className="text-center mb-12">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4"
+        data-aos="">
           Collection Points
         </h3>
         <p className="text-lg text-gray-700 mb-6">
@@ -58,7 +64,8 @@ export default function HowToWorks() {
         </ul>
       </div>
       <div className="text-center">
-        <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+        <h3 className="text-2xl font-semibold text-gray-800 mb-4"
+        data-aos="zoom-in">
           Supported Divisions
         </h3>
         <p className="text-lg text-gray-700 mb-6">

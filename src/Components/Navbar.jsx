@@ -25,7 +25,7 @@ export default function Navbar() {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-blue-950 rounded-box z-[5] mt-3 w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-blue-950 rounded-box z-[4] mt-3 w-52 p-2 shadow">
         <NavLink to={'/'}>Home</NavLink>
      <NavLink to={'/Compaigns'}>Donation Campaigns</NavLink>
      <NavLink to={'/howTo'}>How to Help</NavLink>
@@ -54,7 +54,7 @@ export default function Navbar() {
       <div className='flex items-center gap-2'>
         <img  className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full ' src={user?.photoURL} alt="" />
         <p className='text-xs lg:text-[14px]'>{user?.displayName}</p>
-        <button onClick={logout} className='btn'>Log-Out</button>
+        
       </div>
       : <NavLink to={'/auth/login'} className="btn">Login</NavLink>
     }
