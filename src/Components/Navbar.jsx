@@ -8,7 +8,7 @@ export default function Navbar() {
     <div className="navbar bg-blue-950 text-white w-full">
   <div className="navbar-start">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className=" lg:hidden">
+      <div tabIndex={0} role="button" className="block md:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
