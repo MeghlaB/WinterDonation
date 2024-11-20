@@ -2,13 +2,14 @@ import React, { useContext } from 'react'
 import { AuthContext } from '../ContextApi/AuthProvider'
 import { NavLink } from 'react-router-dom'
 import logoImg from '../assets/winnterDonation.avif'
+
 export default function Navbar() {
   const {user,logout} = useContext(AuthContext)
   return (
-    <div className="navbar bg-blue-950 text-white w-full">
+    <div className="navbar bg-blue-950 text-white  ">
   <div className="navbar-start">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="block md:hidden">
+      <div tabIndex={0} role=" button" className=" block lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
