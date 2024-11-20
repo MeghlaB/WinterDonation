@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FcGoogle } from "react-icons/fc";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -62,13 +62,13 @@ const handleForgetPassword = ()=>{
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" ref={emailRef} name='email' className="input input-bordered" required />
+          <input type="email" placeholder="email"  name='email' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Password</span>
           </label>
-          <input type="password" ref={emailRef} placeholder="password" name='password' className="input input-bordered" required />
+          <input type="password"  placeholder="password" name='password' className="input input-bordered" required />
           <label onClick={handleForgetPassword} className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
            

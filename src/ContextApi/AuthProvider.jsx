@@ -14,10 +14,9 @@ export default function AuthProvider({children}) {
     const [loading , setLoading] = useState(true)
     useEffect(()=>{
       fetch('/Clothes.json')
-      .then((responser=>responser.json()))
+      .then((response=>response.json()))
       .then((data)=>setClothes(data))
     },[])
-    // email password
     const creatUser = (email,password) =>{
       setLoading(true)
       return createUserWithEmailAndPassword(auth,email,password)

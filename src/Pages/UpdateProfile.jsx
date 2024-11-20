@@ -15,8 +15,9 @@ export default function UpdateProfile() {
         .then((result)=>{
           console.log(result.user)
             setUsere(result.user)
-            setLoading(false)
+           
             navigate('/dashboard')
+            setLoading(false)
         })
         .catch((err)=>{
             setUsere(err.message)

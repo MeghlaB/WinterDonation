@@ -7,10 +7,10 @@ import 'aos/dist/aos.css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import banner1 from '../assets/images (2).jpeg';
-import banner2 from '../assets/images (3).jpeg';
-import banner3 from '../assets/download (1).jpeg';
-import banner4 from '../assets/download.jpeg';
+import banner1 from '../assets/winter7.jpg';
+import banner2 from '../assets/winter5.jpg';
+import banner3 from '../assets/Winter6.jpg';
+import banner4 from '../assets/Winter.jpeg';
 
 const BannerSlider = () => {
   useEffect(() => {
