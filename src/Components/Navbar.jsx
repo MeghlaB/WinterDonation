@@ -5,10 +5,10 @@ import logoImg from '../assets/winnterDonation.avif'
 export default function Navbar() {
   const {user,logout} = useContext(AuthContext)
   return (
-    <div className="navbar bg-blue-950 text-white">
+    <div className="navbar bg-blue-950 text-white w-full">
   <div className="navbar-start">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+      <div tabIndex={0} role="button" className=" lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -31,7 +31,7 @@ export default function Navbar() {
      <NavLink to={'/dashboard'}>Dashboard</NavLink>
       </ul>
     </div>
-    <a className="btn btn-ghost text-[18px] lg:text-xl"><span><img className='w-10 h-10 rounded-full' src={logoImg} alt="" /></span>Winnter Donation</a>
+    <a className="btn btn-ghost text-[12px] lg:text-xl"><span><img className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full' src={logoImg} alt="" /></span>Winnter Donation</a>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-6 text-[16px] font-bold">
@@ -51,8 +51,8 @@ export default function Navbar() {
     {
       user?.email?
       <div className='flex items-center gap-2'>
-        <img  className='w-10 h-10 rounded-full ' src={user?.photoURL} alt="" />
-        <p>{user?.displayName}</p>
+        <img  className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full ' src={user?.photoURL} alt="" />
+        <p className='text-xs lg:text-[14px]'>{user?.displayName}</p>
         <button onClick={logout} className='btn'>Log-Out</button>
       </div>
       : <NavLink to={'/auth/login'} className="btn">Login</NavLink>

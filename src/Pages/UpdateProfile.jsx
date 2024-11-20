@@ -17,7 +17,7 @@ export default function UpdateProfile() {
         })
         .catch((err)=>{
           setUsere(null)
-          console.log(err.message)
+          (err.message)
           setLoading(false)
             
         })
