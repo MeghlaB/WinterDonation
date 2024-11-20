@@ -3,24 +3,22 @@ import { AuthContext } from '../ContextApi/AuthProvider'
 import { useNavigate } from 'react-router-dom'
 
 export default function UpdateProfile() {
-    const{UpdateProfile, setUsere, setLoading} = useContext(AuthContext)
+    const{UpdateProfile,setUsere, setLoading} = useContext(AuthContext)
     const navigate = useNavigate()
     const hanldeProfile = (e)=>{
         e.preventDefault()
         const name = e.target.name.value;
         const photo = e.target.photo.value;
-        // console.log(name,photo)
         UpdateProfile({displayName
-          :name,photoURL:photo})
-        .then((result)=>{
-          console.log(result.user)
-            setUsere(result.user)
-           
+          :name , photoURL:photo})
+        .then(()=>{
             navigate('/dashboard')
             setLoading(false)
         })
         .catch((err)=>{
-            setUsere(err.message)
+          setUsere(null)
+          console.log(err.message)
+          setLoading(false)
             
         })
     }
@@ -31,7 +29,7 @@ export default function UpdateProfile() {
         <label className="label">
           <span className="label-text">Name</span>
         </label>
-        <input type="Name" placeholder="enter your name" name='name' className="input input-bordered" required />
+        <input type="text" placeholder="enter your name" name='name' className="input input-bordered" required />
       </div>
       <div className="form-control">
         <label className="label">

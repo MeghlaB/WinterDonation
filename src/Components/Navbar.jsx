@@ -49,7 +49,7 @@ export default function Navbar() {
   </div>
   <div className="navbar-end">
     {
-      user&&user?.email?
+      user?.email?
       <div className='flex items-center gap-2'>
         <img  className='w-10 h-10 rounded-full ' src={user?.photoURL} alt="" />
         <p>{user?.displayName}</p>
