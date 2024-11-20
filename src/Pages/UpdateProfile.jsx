@@ -3,7 +3,7 @@ import { AuthContext } from '../ContextApi/AuthProvider'
 import { useNavigate } from 'react-router-dom'
 
 export default function UpdateProfile() {
-    const{UpdateProfile,setUsere, setLoading} = useContext(AuthContext)
+    const{UpdateProfile,setUsere, setLoading,logout} = useContext(AuthContext)
     const navigate = useNavigate()
     const hanldeProfile = (e)=>{
         e.preventDefault()
@@ -39,6 +39,7 @@ export default function UpdateProfile() {
       </div>
       <div className="form-control mt-6">
         <button className="btn btn-primary">Update</button>
+        
        
       </div>
     </form>

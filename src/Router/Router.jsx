@@ -10,7 +10,7 @@ import Compaings from '../Components/Compaings';
 import HowTo from '../Components/HowTo';
 import Dashboard from '../Components/Dashboard';
 import HowToWorks from '../Pages/HowToWorks';
-import Feauters from '../Pages/feauters';
+import Features from '../Pages/Feauters';
 import Invloed from '../Pages/Invloed';
 import AuthLayout from '../MainLayout/AuthLayout';
 import Login from '../Components/Login'
@@ -60,7 +60,7 @@ import Forget from '../Pages/Forget';
     },
     {
       path:'/features',
-      element:<Feauters></Feauters>
+      element:<Features></Features>
     },
     {
       path:'/invloed',

@@ -31,6 +31,7 @@ export default function Login() {
    const handleGoogle = ()=>{
     GoogleLogin()
     .then((result)=>{
+      console.log(result.user)
       setUsere(result.user)
       navigate(location?.state? location.state :'/')
     })
