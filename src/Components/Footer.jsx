@@ -61,7 +61,7 @@ export default function Footer() {
         <button className="btn btn-primary join-item">Subscribe</button>
       </div>
     </fieldset>
-  </form>
+  </form>U
     </div>
     <aside>
       <p>Copyright © {new Date().getFullYear()} - All right reserved by ACME Industries Ltd</p>

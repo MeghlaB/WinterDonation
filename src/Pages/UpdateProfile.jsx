@@ -3,20 +3,24 @@ import { AuthContext } from '../ContextApi/AuthProvider'
 import { useNavigate } from 'react-router-dom'
 
 export default function UpdateProfile() {
-    const{UpdateProfile, setUsere} = useContext(AuthContext)
+    const{UpdateProfile, setUsere, setLoading} = useContext(AuthContext)
     const navigate = useNavigate()
     const hanldeProfile = (e)=>{
         e.preventDefault()
         const name = e.target.name.value;
         const photo = e.target.photo.value;
         // console.log(name,photo)
-        UpdateProfile({displayName:name,photoURL:photo})
+        UpdateProfile({displayName
+          :name,photoURL:photo})
         .then((result)=>{
+          console.log(result.user)
             setUsere(result.user)
+            setLoading(false)
             navigate('/dashboard')
         })
         .catch((err)=>{
             setUsere(err.message)
+            
         })
     }
   return (

@@ -19,6 +19,7 @@ import DetailsPage from '../Pages/DetailsPage'
 import PrivetRouter from '../PrivetRoute/PrivetRouter';
 import UpdateProfile from '../Pages/UpdateProfile';
 import ErrorPage from '../Pages/ErrorPage';
+import Forget from '../Pages/Forget';
 
   const router = createBrowserRouter([
     {
@@ -79,6 +80,10 @@ import ErrorPage from '../Pages/ErrorPage';
             {
               path:'/auth/login',
               element:<Login></Login>
+            },
+            {
+              path:'/auth/forget',
+              element:<Forget></Forget>
             },
             {
               path:'/auth/register',

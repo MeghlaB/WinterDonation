@@ -10,7 +10,7 @@ export default function Login() {
   const{user ,signInUser ,GoogleLogin,setUsere} = useContext(AuthContext)
   const [showpassword , setShowPassword] = useState(false)
   const location = useLocation()
-  const emailRef = useRef()
+
   const navigate = useNavigate()
     const handeleLogin = e =>{
         e.preventDefault()
@@ -39,20 +39,20 @@ export default function Login() {
     })
    }
 const handleForgetPassword = ()=>{
-  // console.log('hello',emailRef.current.value)
-  const email = emailRef.current.value;
-  if(!email){
-    toast.error('please provid your valid email')
-  }
-  else{
-    sendPasswordResetEmail(auth,email)
-    .then(()=>{
-      toast.success('Verify Email')
-    })
-    .catch((err)=>{
-      toast.error(`Failed to send reset email: ${err.message}`);
-    })
-  }
+  navigate('/auth/forget')
+  // const email = emailRef.current.value;
+  // if(!email){
+  //   toast.error('please provid your valid email')
+  // }
+  // else{
+  //   sendPasswordResetEmail(auth,email)
+  //   .then(()=>{
+  //     toast.success('Verify Email')
+  //   })
+  //   .catch((err)=>{
+  //     toast.error(`Failed to send reset email: ${err.message}`);
+  //   })
+  // }
 }
   return (
    <div>
@@ -71,8 +71,9 @@ const handleForgetPassword = ()=>{
           <input type="password" ref={emailRef} placeholder="password" name='password' className="input input-bordered" required />
           <label onClick={handleForgetPassword} className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-            <ToastContainer></ToastContainer>
+           
           </label>
+          <ToastContainer></ToastContainer>
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
