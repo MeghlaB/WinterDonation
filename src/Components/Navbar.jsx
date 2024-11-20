@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { AuthContext } from '../ContextApi/AuthProvider'
 import { NavLink } from 'react-router-dom'
 import logoImg from '../assets/winnterDonation.avif'
@@ -6,10 +6,10 @@ import logoImg from '../assets/winnterDonation.avif'
 export default function Navbar() {
   const {user,logout} = useContext(AuthContext)
   return (
-    <div className="navbar bg-blue-950 text-white  ">
+    <div className="navbar bg-blue-950 text-white   ">
   <div className="navbar-start">
-    <div className="dropdown">
-      <div tabIndex={0} role=" button" className=" block lg:hidden">
+    <div className="dropdown relative pt-4">
+      <div tabIndex={0} role=" button" className="btn btn-ghost text-center block lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -25,7 +25,7 @@ export default function Navbar() {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-blue-950 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        className="menu menu-sm dropdown-content bg-blue-950 rounded-box z-[5] mt-3 w-52 p-2 shadow">
         <NavLink to={'/'}>Home</NavLink>
      <NavLink to={'/Compaigns'}>Donation Campaigns</NavLink>
      <NavLink to={'/howTo'}>How to Help</NavLink>

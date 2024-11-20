@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react'
 import { AuthContext } from '../ContextApi/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import 'react-toastify/dist/ReactToastify.css';
+import { FcGoogle } from 'react-icons/fc';
 export default function Register() {
-  const {creatUser , UpdateProfile,setUsere,setLoading} = useContext (AuthContext)
+  const {creatUser , UpdateProfile,setUsere,setLoading,GoogleLogin} = useContext (AuthContext)
   const [error , setError] = useState("")
   const [showpassword , setShowPassword] = useState(false)
   const navigate = useNavigate()
@@ -50,6 +51,16 @@ export default function Register() {
           toast.error(`Registration failed! Error:${err.code}`)
         })
     }
+    const handleGoogle = ()=>{
+      GoogleLogin()
+      .then((result)=>{
+        setUsere(result.user)
+        navigate(location?.state? location.state :'/')
+      })
+      .catch((err)=>{
+        setUsere(err.message)
+      })
+     }
   return (
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <form onSubmit={handeleLRegister} className="card-body">
@@ -97,8 +108,11 @@ export default function Register() {
           </label>
         </div>
         <div className="form-control mt-6">
-          <button className="btn btn-primary">Register</button>
-          <ToastContainer></ToastContainer>
+          <button className="btn btn-primary mb-3">Register</button>
+           <p>
+          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white w-full space-y-4'> Google <FcGoogle /></Link>
+        <ToastContainer></ToastContainer>
+       </p>
         </div>
       </form>
     </div>
