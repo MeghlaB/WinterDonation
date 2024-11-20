@@ -1,8 +1,5 @@
-# React + Vite
+#1.Assignment Category: 001
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+#GitHub Repo Link: https://github.com/programming-hero-web-course1/b10-a9-authentication-MeghlaB
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#Live-Link=> https://assingment-09-b60dc.web.app/
