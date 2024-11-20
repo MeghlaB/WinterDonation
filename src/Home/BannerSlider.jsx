@@ -14,7 +14,7 @@ import banner4 from '../assets/Winter.jpeg';
 
 const BannerSlider = () => {
   useEffect(() => {
-    AOS.init({ duration: 1000, easing: 'ease-in-out' }); // Initialize AOS
+    AOS.init({ duration: 1000, easing: 'ease-in-out' });
   }, []);
 
   return (
@@ -35,13 +35,13 @@ const BannerSlider = () => {
               alt="Winter Campaign 1"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white px-4">
-              <h2 className="text-2xl font-bold text-center mb-4">
+              <h2 className=" text-xl lg:text-2xl font-bold text-center mb-4">
                 Dhaka Drive: Distributing Warm Clothes to 500 Families.
               </h2>
               <button
                 className="px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-lg hover:bg-red-600 transition-all duration-300"
                 data-aos="fade-up"
-                onClick={() => alert('Donate Now!')}
+
               >
                 Donate Now
               </button>
@@ -56,13 +56,13 @@ const BannerSlider = () => {
               alt="Winter Campaign 2"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white px-4">
-              <h2 className="text-2xl font-bold text-center mb-4">
+              <h2 className="text-xl lg:text-2xl font-bold text-center mb-4">
                 Chattogram Drive: Join Our Winter Collection Campaign.
               </h2>
               <button
                 className="px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-lg hover:bg-red-600 transition-all duration-300"
                 data-aos="fade-up"
-                onClick={() => alert('Donate Now!')}
+
               >
                 Donate Now
               </button>
@@ -77,13 +77,12 @@ const BannerSlider = () => {
               alt="Winter Campaign 3"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white px-4">
-              <h2 className="text-2xl font-bold text-center mb-4">
+              <h2 className="text-xl lg:text-2xl  font-bold text-center mb-4">
                 Barishal: Join us in spreading warmth this winter. Donate now to help those in need.
               </h2>
               <button
                 className="px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-lg hover:bg-red-600 transition-all duration-300"
                 data-aos="fade-up"
-                onClick={() => alert('Donate Now!')}
               >
                 Donate Now
               </button>
@@ -98,13 +97,12 @@ const BannerSlider = () => {
               alt="Winter Campaign 4"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 text-white px-4">
-              <h2 className="text-2xl font-bold text-center mb-4">
+              <h2 className="text-xl lg:text-2xl  font-bold text-center mb-4">
                 Sylhet Drive: Helping Those in Need.
               </h2>
               <button
                 className="px-4 py-2 bg-red-500 text-white font-semibold rounded-md shadow-lg hover:bg-red-600 transition-all duration-300"
                 data-aos="fade-up"
-                onClick={() => alert('Donate Now!')}
               >
                 Donate Now
               </button>

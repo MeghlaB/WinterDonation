@@ -12,18 +12,19 @@ const emailRef = useRef()
         e.preventDefault()
         // navigate('/auth/forget')
         const email = emailRef.current.value;
-        if(!email){
-          toast.error('please provid your valid email')
-        }
-        else{
-          sendPasswordResetEmail(auth,email)
-          .then(()=>{
-            toast.success('Verify Email')
-          })
-          .catch((err)=>{
-            toast.error(`Failed to send reset email: ${err.message}`);
-          })
-        }
+        window.location.href='https://mail.google.com/';
+        // if(!email){
+        //   toast.error('please provid your valid email')
+        // }
+        // else{
+        //   sendPasswordResetEmail(auth,email)
+        //   .then(()=>{
+        //     toast.success('Verify Email')
+        //   })
+        //   .catch((err)=>{
+        //     toast.error(`Failed to send reset email: ${err.message}`);
+        //   })
+        // }
       }
   return (
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
