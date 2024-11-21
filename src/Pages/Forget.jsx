@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify';
 import { AuthContext } from '../ContextApi/AuthProvider';
 import { sendPasswordResetEmail } from 'firebase/auth';
@@ -7,24 +7,24 @@ import { auth } from '../Firebase_Init/Firebase_init';
 
 export default function Forget() {
 const{setUsere} = useContext(AuthContext)
+const navigate = useNavigate()
 const emailRef = useRef()
     const handleForgetPassword = (e)=>{
         e.preventDefault()
-        // navigate('/auth/forget')
+        navigate('/auth/forget')
         const email = emailRef.current.value;
-        window.location.href='https://mail.google.com/';
-        // if(!email){
-        //   toast.error('please provid your valid email')
-        // }
-        // else{
-        //   sendPasswordResetEmail(auth,email)
-        //   .then(()=>{
-        //     toast.success('Verify Email')
-        //   })
-        //   .catch((err)=>{
-        //     toast.error(`Failed to send reset email: ${err.message}`);
-        //   })
-        // }
+        if(!email){
+          toast.error('please provid your valid email')
+        }
+        else{
+          sendPasswordResetEmail(auth,email)
+          .then(()=>{
+            toast.success('Verify Email')
+          })
+          .catch((err)=>{
+            toast.error(`Failed to send reset email: ${err.message}`);
+          })
+        }
       }
   return (
     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
