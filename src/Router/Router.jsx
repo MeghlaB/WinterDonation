@@ -20,7 +20,7 @@ import UpdateProfile from '../Pages/UpdateProfile';
 import ErrorPage from '../Pages/ErrorPage';
 import Forget from '../Pages/Forget';
 import Features from '../Pages/feauters';
-import Details from '../Pages/Details';
+
 
   const router = createBrowserRouter([
     {

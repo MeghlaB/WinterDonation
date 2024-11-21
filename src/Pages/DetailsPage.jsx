@@ -8,7 +8,7 @@ import Footer from "../Components/Footer";
 
 const DonationDetails = () => {
   const data = useLoaderData()
-  const {image,title,description,contactInfo,division} = data
+  const {image,title,description,contactInfo,division,status} = data
   const { clothes, user ,setLoading} = useContext(AuthContext);
   
   const navigate = useNavigate();
@@ -57,6 +57,14 @@ const DonationDetails = () => {
       </p>
       <p className="">
       <span className="text-xl font-semibold text-blue-600">Contact:</span> <span className="text-red-400"> {contactInfo}</span>
+      </p>
+      <p className="py-2">
+        <span className="text-xl font-semibold text-blue-600">Status:</span> <span
+        className={
+          status === "Ongoing"?
+          'bg-green-400 border text-white p-1 rounded-md':'bg-gray-300 border p-1 rounded-md text-gray-100'
+        }
+        >{status}</span>
       </p>
       <p className="">
       <span className="text-xl font-semibold text-blue-600">Division:</span> <span className="text-red-400"> {division}</span>
