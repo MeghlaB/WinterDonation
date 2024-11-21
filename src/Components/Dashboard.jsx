@@ -17,7 +17,6 @@ export default function Dashboard() {
      </div>
       <div className='flex flex-col space-y-4'>
       <NavLink to={'/update'} className="btn btn-primary">UpdateProfile</NavLink>
-      <button onClick={logout} className="btn btn-primary">LogOut</button>
       </div>
       
     </div>

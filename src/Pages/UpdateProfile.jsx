@@ -39,8 +39,6 @@ export default function UpdateProfile() {
       </div>
       <div className="form-control mt-6">
         <button className="btn btn-primary">Update</button>
-        
-       
       </div>
     </form>
   </div>
