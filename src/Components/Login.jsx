@@ -19,9 +19,13 @@ export default function Login() {
         signInUser(email,password)
         .then((result)=>{
           setUsere(result.user)
-          navigate(location?.state? location.state :'/')
-          toast.success('Login SuccessFully!')
-       
+          if(result.user){
+            toast.success('Login SuccessFully!')
+            setTimeout(()=>{
+              navigate(location?.state? location.state :'/')
+            },1000)
+          }
+         
         })
         .catch((err)=>{
          setUsere(err.message)
@@ -32,8 +36,13 @@ export default function Login() {
     GoogleLogin()
     .then((result)=>{
       setUsere(result.user)
-      navigate(location?.state? location.state :'/')
-      toast.success('Google Login Successful!')
+      if(result.user){
+        toast.success('Google Login Successful!')
+        setTimeout(()=>{
+          navigate(location?.state? location.state :'/')
+        },1000)
+      }
+     
     })
     .catch((err)=>{
       setUsere(err.message)
@@ -44,7 +53,7 @@ const handleForgetPassword = ()=>{
 }
   return (
    <div>
-     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+     <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl px-4 py-3">
       <form onSubmit={handeleLogin} className="card-body">
         <div className="form-control">
           <label className="label">
@@ -65,13 +74,14 @@ const handleForgetPassword = ()=>{
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
         </div>
-        <p>Don't Have An Account ?<span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
-       <p>
-          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white w-full'> Google <FcGoogle /></Link>
         
-       </p>
       
       </form> 
+      <p>Don't Have An Account ?<span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
+      <p>
+          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white flex items-center'> Google <FcGoogle /></Link>
+        
+       </p>
     </div>
     <ToastContainer></ToastContainer>
    </div>

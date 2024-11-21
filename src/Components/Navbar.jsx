@@ -54,7 +54,7 @@ export default function Navbar() {
       <div className='flex items-center gap-2'>
         <img  className=' w-5 h-5 lg:w-10 lg:h-10 rounded-full ' src={user?.photoURL} alt="" />
         <p className='text-xs lg:text-[14px]'>{user?.displayName}</p>
-        
+        <button onClick={logout} className="btn">LogOut</button>
       </div>
       : <NavLink to={'/auth/login'} className="btn">Login</NavLink>
     }
