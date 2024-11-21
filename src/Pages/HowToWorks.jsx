@@ -73,19 +73,20 @@ export default function HowToWorks() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-6">
-          <div className="px-6 py-3 bg-blue-200 text-white rounded-lg shadow-md">
+          <div className="px-6 py-3 btn btn-primary text-white rounded-lg shadow-md"
+          data-aos="">
             Dhaka
           </div>
-          <div className="px-6 py-3 bg-green-200 text-white rounded-lg shadow-md">
+          <div className="px-6 py-3 btn btn-accent text-white rounded-lg shadow-md">
             Chattogram
           </div>
-          <div className="px-6 py-3 bg-yellow-200 text-white rounded-lg shadow-md">
+          <div className="px-6 py-3 btn btn-success text-white rounded-lg shadow-md">
             Sylhet
           </div>
-          <div className="px-6 py-3 bg-red-200 text-white rounded-lg shadow-md">
+          <div className="px-6 py-3 btn btn-info text-white rounded-lg shadow-md">
             Khulna
           </div>
-          <div className="px-6 py-3 bg-purple-200 text-white rounded-lg shadow-md">
+          <div className="px-6 py-3 btn btn-warning text-white rounded-lg shadow-md">
             Barishal
           </div>
         </div>

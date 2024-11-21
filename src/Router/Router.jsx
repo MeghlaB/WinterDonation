@@ -10,7 +10,6 @@ import Compaings from '../Components/Compaings';
 import HowTo from '../Components/HowTo';
 import Dashboard from '../Components/Dashboard';
 import HowToWorks from '../Pages/HowToWorks';
-import Features from '../Pages/Feauters';
 import Invloed from '../Pages/Invloed';
 import AuthLayout from '../MainLayout/AuthLayout';
 import Login from '../Components/Login'
@@ -20,6 +19,8 @@ import PrivetRouter from '../PrivetRoute/PrivetRouter';
 import UpdateProfile from '../Pages/UpdateProfile';
 import ErrorPage from '../Pages/ErrorPage';
 import Forget from '../Pages/Forget';
+import Features from '../Pages/feauters';
+import Details from '../Pages/Details';
 
   const router = createBrowserRouter([
     {
@@ -67,10 +68,19 @@ import Forget from '../Pages/Forget';
       element:<Invloed></Invloed>
     },
     {
-      path:'/details',
+      path:'/details/:id',
       element:<PrivetRouter>
         <DetailsPage></DetailsPage>
-      </PrivetRouter>
+      </PrivetRouter>,
+      loader : async({params}) => {
+        const res = await fetch("/Clothes.json")
+        const data = await res.json()
+        console.log(data)
+        const singleData = data.find(d=>d.id == params.id)
+        console.log(singleData)
+        return singleData
+    }
+      
     },
    
     {

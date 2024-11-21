@@ -13,7 +13,7 @@ export default function Login() {
 
   const navigate = useNavigate()
     const handeleLogin = e =>{
-        e.preventDefault()
+      e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
         signInUser(email,password)
@@ -21,7 +21,7 @@ export default function Login() {
           setUsere(result.user)
           navigate(location?.state? location.state :'/')
           toast.success('Login SuccessFully!')
-          e.target.reset()
+       
         })
         .catch((err)=>{
          setUsere(err.message)
@@ -31,9 +31,9 @@ export default function Login() {
    const handleGoogle = ()=>{
     GoogleLogin()
     .then((result)=>{
-      console.log(result.user)
       setUsere(result.user)
       navigate(location?.state? location.state :'/')
+      toast.success('Google Login Successful!')
     })
     .catch((err)=>{
       setUsere(err.message)
@@ -41,19 +41,6 @@ export default function Login() {
    }
 const handleForgetPassword = ()=>{
   navigate('/auth/forget')
-  // const email = emailRef.current.value;
-  // if(!email){
-  //   toast.error('please provid your valid email')
-  // }
-  // else{
-  //   sendPasswordResetEmail(auth,email)
-  //   .then(()=>{
-  //     toast.success('Verify Email')
-  //   })
-  //   .catch((err)=>{
-  //     toast.error(`Failed to send reset email: ${err.message}`);
-  //   })
-  // }
 }
   return (
    <div>
@@ -74,7 +61,6 @@ const handleForgetPassword = ()=>{
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
            
           </label>
-          <ToastContainer></ToastContainer>
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>
@@ -82,11 +68,12 @@ const handleForgetPassword = ()=>{
         <p>Don't Have An Account ?<span><NavLink to={'/auth/register'} className='text-blue-700 underline'>Register</NavLink></span></p>
        <p>
           <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white w-full'> Google <FcGoogle /></Link>
-        <ToastContainer></ToastContainer>
+        
        </p>
+      
       </form> 
     </div>
-   
+    <ToastContainer></ToastContainer>
    </div>
   )
 }

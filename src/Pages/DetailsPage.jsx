@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../ContextApi/AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,7 +7,10 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 
 const DonationDetails = () => {
+  const data = useLoaderData()
+  const {image,title,description,contactInfo,division} = data
   const { clothes, user ,setLoading} = useContext(AuthContext);
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -41,15 +44,30 @@ const DonationDetails = () => {
 
   return (
     <div>
-        <Navbar></Navbar>
-         <div className="p-6">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold">{clothes.title}</h1>
-        <p className="text-gray-700 mt-2">{clothes.description}</p>
+      <Navbar></Navbar>
+      <div className="hero bg-base-200 h-[450px] mt-4">
+  <div className="hero-content flex-col lg:flex-row">
+    <img
+      src={image}
+      className="max-w-sm rounded-lg shadow-2xl" />
+    <div>
+      <h1 className=" text-xl lg:text-5xl font-bold">{title}</h1>
+      <p className="py-6 text-xl font-semibold">
+       {description}
+      </p>
+      <p className="">
+      <span className="text-xl font-semibold text-blue-600">Contact:</span> <span className="text-red-400"> {contactInfo}</span>
+      </p>
+      <p className="">
+      <span className="text-xl font-semibold text-blue-600">Division:</span> <span className="text-red-400"> {division}</span>
+      </p>
       
-      </div>
-      <form onSubmit={handleSubmit} className="bg-white p-4 rounded shadow">
-        <h2 className="text-xl font-bold mb-4">Donation Form</h2>
+    </div>
+  </div>
+</div>
+    <div className="p-6">
+      <form onSubmit={handleSubmit} className="bg-white p-4 w-full  border-r-2 border-l-2 border-t-2 border-b-2 border-blue-500 rounded-lg shadow">
+        <h2 className="text-2xl font-bold mb-4">Donation Form</h2>
         <div className="mb-4">
           <label htmlFor="quantity" className="block font-medium">
             Quantity of Items
