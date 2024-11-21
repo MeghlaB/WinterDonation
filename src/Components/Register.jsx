@@ -43,26 +43,46 @@ export default function Register() {
             setLoading(false)
             setUsere(err.message)
           })
-         
-
 
         })
         .catch((err)=>{
           toast.error(`Registration failed! Error:${err.code}`)
         })
     }
+    // const handleGoogle = ()=>{
+    //   GoogleLogin()
+    //   .then((result)=>{
+    //     setUsere(result.user)
+    //     if(result.user){
+    //       toast.success('Google Login Successful!')
+    //       setTimeout(()=>{
+    //         navigate(location?.state? location.state :'/')
+    //       },1000)
+    //     }
+    //   })
+    //   .catch((err)=>{
+    //     setUsere(err.message)
+    //   })
+    //  }
     const handleGoogle = ()=>{
       GoogleLogin()
       .then((result)=>{
         setUsere(result.user)
-        navigate(location?.state? location.state :'/')
+        toast.success('Google Login Successful!')
+        if(result.user){
+          
+          setTimeout(()=>{
+            navigate(location?.state? location.state :'/')
+          },1000)
+        }
+       
       })
       .catch((err)=>{
         setUsere(err.message)
       })
      }
   return (
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl px-3 py-3">
       <form onSubmit={handeleLRegister} className="card-body">
         <div className="form-control">
           <label className="label">
@@ -109,12 +129,13 @@ export default function Register() {
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary mb-3">Register</button>
-           <p>
-          <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white w-full space-y-4'> Google <FcGoogle /></Link>
-        <ToastContainer></ToastContainer>
-       </p>
+         
         </div>
       </form>
+      <p>
+      <Link onClick={handleGoogle} className='btn border-blue-950 text-xl hover:bg-sky-950 hover:text-white w-full space-y-4'> Google <FcGoogle /></Link>
+       </p>
+       <ToastContainer></ToastContainer>
     </div>
   )
 }
