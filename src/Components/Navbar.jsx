@@ -36,7 +36,7 @@ export default function Navbar() {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1 gap-6 text-[16px] font-bold">
-     <NavLink className={({ isActive}) =>isActive ? "underline text-emerald-500" : ""
+     <NavLink className={({ isActive}) =>isActive ? "underline text-emerald-500 text-2xl" : ""
   } to={'/'}>Home</NavLink>
      <NavLink className={({ isActive}) =>isActive ? "underline text-emerald-500" : ""
   } to={'/Compaigns'}>Donation Campaigns</NavLink>

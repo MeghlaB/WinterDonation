@@ -48,9 +48,7 @@ export default function Login() {
       setUsere(err.message)
     })
    }
-const handleForgetPassword = ()=>{
-  navigate('/auth/forget')
-}
+
   return (
    <div>
      <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl px-4 py-3">

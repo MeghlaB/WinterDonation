@@ -49,28 +49,12 @@ export default function Register() {
           toast.error(`Registration failed! Error:${err.code}`)
         })
     }
-    // const handleGoogle = ()=>{
-    //   GoogleLogin()
-    //   .then((result)=>{
-    //     setUsere(result.user)
-    //     if(result.user){
-    //       toast.success('Google Login Successful!')
-    //       setTimeout(()=>{
-    //         navigate(location?.state? location.state :'/')
-    //       },1000)
-    //     }
-    //   })
-    //   .catch((err)=>{
-    //     setUsere(err.message)
-    //   })
-    //  }
     const handleGoogle = ()=>{
       GoogleLogin()
       .then((result)=>{
         setUsere(result.user)
         toast.success('Google Login Successful!')
         if(result.user){
-          
           setTimeout(()=>{
             navigate(location?.state? location.state :'/')
           },1000)
@@ -82,7 +66,7 @@ export default function Register() {
       })
      }
   return (
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl px-3 py-3">
+    <div className="card bg-base-100 w-full max-w-sm mx shrink-0 shadow-2xl px-3 py-3">
       <form onSubmit={handeleLRegister} className="card-body">
         <div className="form-control">
           <label className="label">
