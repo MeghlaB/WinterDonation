@@ -1,6 +1,11 @@
 
 #1.Projects Name: Winter Clothing Donation Website
 
+<p align="center">
+  <img src="https://i.ibb.co.com/bMq64bWG/Capture.png" alt="Project Preview" width="600" />
+</p>
+---
+
 #2.Live-Link=> https://assingment-09-b60dc.web.app/
 
 #3.Description => The Winter Clothing Donation Website is a simple and user-friendly platform designed to help people donate winter clothing to those in need across Bangladesh. It connects donors with volunteers and allows users to easily donate clothes to individuals who are struggling to stay warm during the colder months, particularly in rural and low-income areas...
